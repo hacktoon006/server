@@ -21,7 +21,24 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors({ origin: "https://hacktoon-world.vercel.app", credentials: true }));
+const allowedOrigins = [
+  "https://hacktoon-world.vercel.app", // ✅ your Vercel frontend
+  "http://localhost:3000",             // ✅ for local dev
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 // Serve uploaded files
