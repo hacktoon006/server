@@ -19,7 +19,12 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
+app.use(
+  cors({
+    origin: "https://hacktoon-world-gowtham006ks-projects.vercel.app",
+    credentials: true,
+  })
+);
 // Middleware
 const allowedOrigins = [
   "https://hacktoon-world.vercel.app", // ✅ your Vercel frontend
