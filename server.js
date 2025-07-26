@@ -5,7 +5,7 @@ const Chat = require("./models/Chat");
 
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: "https://hacktoon.onrender.com", credentials: true },
+  cors: { origin: "https://hacktoon-world.vercel.app", credentials: true },
 });
 
 let onlineUsers = 0;
