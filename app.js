@@ -27,7 +27,7 @@ app.use(
 );
 // Middleware
 const allowedOrigins = [
-  "https://hacktoon-world.vercel.app", // ✅ your Vercel frontend
+  "https://hacktoon-world-gowtham006ks-projects.vercel.app", // ✅ your Vercel frontend
   "http://localhost:3000",             // ✅ for local dev
 ];
 
